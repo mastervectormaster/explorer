@@ -169,6 +169,9 @@ export default class ChainFetch {
     if (this.config.chain_name === 'evmos') {
       return this.get('/evmos/inflation/v1/inflation_rate').then(data => Number(data.inflation_rate / 100 || 0))
     }
+    if (this.config.chain_name === 'bcxtestnet') {
+      return this.get('/blockx/inflation/v1/inflation_rate').then(data => Number(data.inflation_rate / 100 || 0))
+    }
     if (this.config.chain_name === 'echelon') {
       return this.get('/echelon/inflation/v1/inflation_rate').then(data => Number(data.inflation_rate / 100 || 0))
     }
@@ -237,7 +240,7 @@ export default class ChainFetch {
   }
 
   async getMintParameters() {
-    if (this.config.chain_name === 'evmos') {
+    if (this.config.chain_name === 'evmos' || this.config.chain_name === 'BCXTestnet') {
       const result = await this.get('/evmos/inflation/v1/params').then(data => data.params)
       await this.get('/evmos/inflation/v1/period').then(data => {
         Object.entries(data).forEach(x => {
