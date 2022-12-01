@@ -1,11 +1,11 @@
 {
-    "chain_name": "BCXTestnet",
+    "chain_name": "bcxtestnet",
     "coingecko": "bcx",
     "api": ["https://testnet-api.blockxnet.com"],
     "rpc": ["https://testnet-keplr.blockxnet.com"],
     "snapshot_provider": "",
     "sdk_version": "0.45.1",
-    "coin_type": "60",
+    "coin_type": 60,
     "min_tx_fee": "25000000000",
     "addr_prefix": "blockx",
     "logo": "/logos/evmos.jpeg",
@@ -13,7 +13,7 @@
     "assets": [{
         "base": "abcx",
         "symbol": "BCX",
-        "exponent": "18",
+        "exponent": 18,
         "coingecko_id": "bcx", 
         "logo": "/logos/evmos.jpeg"
     }]
